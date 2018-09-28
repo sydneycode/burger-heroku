@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burger Logger</title>
+    {{!-- Link to CSS --}}
+    <link rel="stylesheet" href="assets/css/burger_style.css">
+</head>
+<body>
+
+    {{{body}}}
+
+    {{!-- Link to JQuery --}}
+    <script src="https://code.jquery.com/jquery.js"></script>
+    {{!-- JavaScript to run --}}
+    <script type="text/javascript">
+    
+    $(function() {
+        $("#submit-burger").on("click", function(event) {
+            // Input validation
+            if ($("#enter-burger").val().trim() === "") {
+                alert("Please enter the name of a burger you would like to eat before clicking \"Submit\"");
+            }
+            else {
+                var newBurger = {
+                    name: $("#enter-burger").val().trim()
+                };
+
+                // Send the POST request
+                $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+                }).then(
+                    function() {
+                        console.log("created new burger");
+                        // Reload the page to get the updated list
+                        location.reload();
+                    }
+                );
+            }
+        });
+
+        $(".devour-burger").on("click", function(event) {
+            var id = $(this).data("id");
+
+            var newDevouredState = {
+                devoured: true
+            };
+
+            // Send the PUT request
+            $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: newDevouredState
+            }).then(
+                function() {
+                    console.log("changed devoured to true");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
+    });
+    
+    </script>
+</body>
+</html>

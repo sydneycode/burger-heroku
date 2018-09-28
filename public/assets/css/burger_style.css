@@ -1,0 +1,63 @@
+#top, #enter-text, #below-text {
+    text-align: center;
+}
+
+#wrapper {
+    margin: auto;
+    width: 70%;
+    overflow: auto;
+}
+
+#left {
+    width: 50%;
+    float: left;
+    margin: auto;
+}
+
+#right {
+    width: 50%;
+    float: right;
+    margin: auto;
+}
+
+h1 {
+    color: purple;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+#enter-burger {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+#submit-burger {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 10px 0;
+}
+
+.show-burger {
+    padding: 10px;
+}
+
+.devour-burger {
+    margin-left: 20px;
+}

@@ -1,2 +1,2 @@
-# burger-heroku
-Node, Express, and Handlebars Homework
+# burger
+Burger Logger app using Node, Express, and Handlebars
